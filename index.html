@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Interactive Quiz</title>
+</head>
+<body>
+    <div class="container mt-5">
+        <!-- Authentication Section -->
+        <div id="auth-container" class="text-center mb-5">
+            <h1 class="mb-4">Quiz Authentication</h1>
+            <input type="password" id="password" class="form-control mb-3" placeholder="Type 'password123' here!">
+            <button id="login-btn" class="btn btn-success">Login</button>
+            <p id="auth-message" class="mt-3"></p>
+        </div>
+
+        <!-- Quiz Container -->
+        <div id="quiz-container" class="d-flex" style="display: none;">
+            <div class="w-100">
+                <button id="home-btn" class="btn btn-outline-primary mb-2">🏠 Home</button>
+            </div>
+            <div id="sidebar" class="sidebar mr-3">
+                <h4>Navigation</h4>
+                <button id="prev-btn" class="btn btn-secondary mb-2" style="display: block;">Previous Question</button>
+                <div id="question-attempted" class="mt-3">Questions Attempted: <span id="attempted-questions">0</span></div>
+                <div id="questions-remaining">Questions Remaining: <span id="remaining-questions">4</span></div>
+                <div id="timer" class="mt-3"></div>
+            </div>
+            <div class="card flex-fill" id="question-container">
+                <div class="card-body">
+                    <h5 class="card-title" id="question-text"></h5>
+                    <ol id="options-container" class="list-unstyled"></ol>
+                    <p id="feedback" style="display: none;" class="mt-3"></p>
+                    <button id="next-question-btn" class="btn btn-primary mt-3" style="display: none;">Next Question</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div id="result-container" class="text-center" style="display: none;">
+            <h1>Your Score</h1>
+            <p id="final-score" class="lead"></p>
+            <button id="retry-btn" class="btn btn-warning">Retry Quiz</button>
+        </div>
+
+        <!-- Progress Bar -->
+        <div id="progress-container" class="mt-3" style="display: none;">
+            <div id="progress-bar" class="progress-bar" role="progressbar" style="width: 0%;" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
